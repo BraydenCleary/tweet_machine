@@ -1,0 +1,24 @@
+<div class='tweet-container'>
+  <% if @client %>
+    <h1>Tweet Now, Do it!</h1>
+    <form action='/tweets' method='post' id='tweet-form'>
+      <textarea name='tweet' placeholder='tweet'></textarea>
+      <label name="time"> When you wanna tweet at?</label>
+      <select name="time">
+        <option value=nil>Now!!!</option>
+        <option value="1">1 hour</option>
+        <option value="2">2 hours</option>
+        <option value="24">This time tomorrow</option>
+      </select>
+      <input class="tweet-submit-btn btn btn-large btn-block" type='submit' value='Tweet' />
+    </form>
+  <% else %>
+    <h1>Please sign in with Twitter.</h1>
+  <% end %>
+  <div class='messages'>
+  </div>
+
+  <div class="spinner">
+    <img src='/images/infinity.gif' class='load' />
+  </div>
+</div>
